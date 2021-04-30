@@ -23,25 +23,67 @@ for word in words:
         pass
 
 ##################################################
+def intro():
+    print()
+    line ="""THIS IS WHEEL OF FORTUNE!\n 
+            You will have a chance to guess a random word.\n
+            Start by guessing a vowel and then a consonant.\n
+            You will be given 8 chances to guess the word correctly.\n
+            The letter guessed correctly will display in the blank spaces for the word.\n
+            Good luck and have fun!\n"""
+    print(line)
 
+def difficulty_choice():
+    user_choice = input("Choose a difficutly:  ENTER  1 for Easy, 2 for Normal, or 3 for Challenging:  ")
+    return user_choice
 
-def pick_mystery_word():
-    word_bank = medium_words
+def game_mode_pick(difficulty_choice):
+    if difficulty_choice == "1":
+        return short_words
+    elif difficulty_choice == "2":
+        return medium_words
+    elif difficulty_choice == "3":
+        return long_words
+    else:
+        input("Choose a difficutly:  ENTER  1 for Easy, 2 for Normal, or 3 for Challenging:  ")    
+
+def pick_mystery_word(difficulty):
+    word_bank = game_mode_pick(difficulty)
     return random.choice(word_bank)
 
-def pick_a_word():
-        word_bank = []
-        print(len(random.choice(medium_words))) 
+
+def pick_a_word(word):
+    print(len(word))
     
     
 def split(word):
     return list(word)
 
+choice = difficulty_choice()
 
-mystery_word = pick_mystery_word()
+mystery_word = pick_mystery_word(choice)
+
+
+intro()
+ 
 print(mystery_word)
-pick_a_word()
+pick_a_word(mystery_word)
 print(split(mystery_word))
+
+
+
+############################################
+
+
+
+    
+
+
+
+
+
+
+
 
 
 # print(easy_words)
@@ -49,9 +91,6 @@ print(split(mystery_word))
 # print(easy_words)   
 
 
-# def difficulty_choice
-# def pick_mystery_word(difficulty_choice):
-#     return random.choice(difficulty_choice)
     
 
 # def split(word):
