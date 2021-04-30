@@ -1,6 +1,9 @@
 fileObject = open("words.txt", "r")
 lines = fileObject.readlines()
-print(lines)
+# print(lines)
+
+words = [line[:-1] for line in lines]
+print(words)
 
 easy_words = []
 medium_words = []
