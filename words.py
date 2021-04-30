@@ -1,22 +1,19 @@
-string = """a
-aa
-aal
-aalii
-aam
-Aani
-aardvark
-aardwolf
-Aaron
-Aaronic
-Aaronical
-Aaronite
-Aaronitic
-Aaru
-Ab
-aba
-Ababdeh
-Ababua
-abac
-abaca"""
+fileObject = open("words.txt", "r")
+lines = fileObject.readlines()
+print(lines)
 
-print(str.split(string))
+easy_words = []
+medium_words = []
+hard_words = []
+
+# for string in lines:
+    # clean string
+    # word = string.strip
+    # print(word)
+    # if word.len == 4 or word.len ==5:
+    #     put in easy_list
+    # # elif word 6-7 characters:
+
+
+
+#  print(easy_words)   
