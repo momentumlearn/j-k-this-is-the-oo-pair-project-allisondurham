@@ -76,6 +76,7 @@ def play(word):
     print("\n")
     while not guessed and tries > 0:
         guess = input("Please guess a letter: ").lower()
+
         if len(guess) == 1 and guess.isalpha():
            if guess in guessed_letters:
                print("You already guessed the letter", guess)
@@ -93,6 +94,7 @@ def play(word):
                word_completion = "".join(word_as_list)
                if "_" not in word_completion:
                    guessed = True
+
         elif len(guess) == len(word) and guess.alpha():
             if guess in guessed_words:
                 print("You already guessed", guess)
@@ -104,12 +106,13 @@ def play(word):
                 guessed = True
                 word_completion = word
 
-
         else:
             print("Please enter a single letter")
         print(f' You have {tries} left')
         print(word_completion)
         print("\n")
+
+
     if guessed:
         print("You are the winner of this episode of Wheel of Fortune!")
         # print("Would you like to play again? yes or no?  ")
@@ -121,6 +124,7 @@ def play(word):
 
 def main():
     word = mystery_word
+    print("")
     print(mystery_word)
     play(mystery_word)
     pick_a_word()

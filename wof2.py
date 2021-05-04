@@ -74,7 +74,7 @@ def play(word):
         guess = input("Please guess a letter: ").lower()
         if len(guess) == 1 and guess.isalpha():
            if guess in guessed_letters:
-               print("You already guessed the letter", guess)
+               print("You have already guessed the letter", guess)
            elif guess not in word:
                print(guess, "is not in the word.")
                tries -= 1
@@ -108,40 +108,47 @@ def play(word):
         print("\n")
     if guessed:
         print("You are the winner of this episode of Wheel of Fortune!")
-        input("Would you like to play again? yes or no?  ")
+        print("")
+        pass
     else:
-        print("Sorry, you ran out of tries. The word was " + word + ". You must leave and start over. Better luck next time.")
-        input("Would you like to play again? yes or no?  ")
+        print("Sorry, you ran out of tries. The word was " + word + ". Better luck next time.")
+        print()
+        pass
 
 
 
 ############################################################################################
         
 
-intro()
 
-choice = difficulty_choice()
 
-mystery_word = pick_mystery_word(choice).lower()
 
 
 
 def main():
+    intro()
+    choice = difficulty_choice()
+    mystery_word = pick_mystery_word(choice).lower()
     word = mystery_word
     print(mystery_word)
     play(mystery_word)
-    pick_a_word()
-    pick_mystery_word(game_mode_pick(difficulty_choice))
-    # while input("Would you like to play again? yes or no ").lower() == "yes":
-    #     word = mystery_word
-    #     pick_mystery_word(game_mode_pick(difficulty_choice))
-    #     play(word)
+    # pick_a_word()
+    # pick_mystery_word(game_mode_pick(difficulty_choice))
+
         
 
 
 def play_the_game():
-    while input("Would you like to play again? yes or no?  ").lower() == "yes":
-        if __name__ == "__main__":
+    while True:
+        print("")
+        yes_no = input("Are you ready to play WHEEL OF FORTUNE?    yes or no?       ")
+        if yes_no == "yes":
             main()
+        elif yes_no == "no":    
+            print("Goodbye, have a goood day!")
+            break
+        else: 
+            continue
+
 
 play_the_game()
