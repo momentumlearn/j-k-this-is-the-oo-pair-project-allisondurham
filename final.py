@@ -9,6 +9,8 @@ medium_words = []
 long_words = []
 
 
+########################################################################
+
 
 def intro():
     print()
@@ -72,6 +74,8 @@ def play(word):
     print("\n")
     while not guessed and tries > 0:
         guess = input("You guessed: ").lower()
+
+
         if len(guess) == 1 and guess.isalpha():
            if guess in guessed_letters:
                print("You have already guessed the letter", guess)
@@ -89,6 +93,7 @@ def play(word):
                word_completion = "".join(word_as_list)
                if "_" not in word_completion:
                    guessed = True
+
         elif len(guess) == len(word) and guess.alpha():
             if guess in guessed_words:
                 print("You already guessed", guess)
@@ -100,16 +105,19 @@ def play(word):
                 guessed = True
                 word_completion = word
 
-
         else:
             print("Please guess a single letter")
+
+
         print(f' You have {tries} tries left')
         print(word_completion)
         print("\n")
+
     if guessed:
         print("You are the winner of this episode of Wheel of Fortune!")
         print("")
         pass
+
     else:
         print("Sorry, you ran out of tries. The word was " + word + ". Better luck next time.")
         print()
