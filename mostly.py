@@ -20,6 +20,10 @@ def intro():
             Good luck and have fun!\n"""
     print(line)
 
+def game_prompt():
+    answer = input("Would you like to play? yes or no?   ")
+    return answer
+
 
 def difficulty_choice():
     user_choice = input("Choose a difficutly:  ENTER  1 for Easy, 2 for Normal, or 3 for Challenging:  ")
@@ -103,26 +107,15 @@ def play(word):
 
         else:
             print("Please enter a single letter")
-        print(f' You have {tries} tries left')
+        print(f' You have {tries} left')
         print(word_completion)
         print("\n")
     if guessed:
         print("You are the winner of this episode of Wheel of Fortune!")
-        input("Would you like to play again? yes or no?  ")
+        # print("Would you like to play again? yes or no?  ")
     else:
-        print("Sorry, you ran out of tries. The word was " + word + ". You must leave and start over. Better luck next time.")
-        input("Would you like to play again? yes or no?  ")
-
-
-
-############################################################################################
-        
-
-intro()
-
-choice = difficulty_choice()
-
-mystery_word = pick_mystery_word(choice).lower()
+        print("Sorry, you ran out of tries. The word was " + word + ". Better luck next time.")
+        # input("Would you like to play again? yes or no?  ")
 
 
 
@@ -132,16 +125,27 @@ def main():
     play(mystery_word)
     pick_a_word()
     pick_mystery_word(game_mode_pick(difficulty_choice))
-    # while input("Would you like to play again? yes or no ").lower() == "yes":
+    # while input("Would you like to play again? yes or no?  ").lower() == "yes":
     #     word = mystery_word
-    #     pick_mystery_word(game_mode_pick(difficulty_choice))
     #     play(word)
+############################################################################################
         
 
+intro()
 
-def play_the_game():
-    while input("Would you like to play again? yes or no?  ").lower() == "yes":
-        if __name__ == "__main__":
-            main()
 
-play_the_game()
+
+choice = difficulty_choice()
+
+mystery_word = pick_mystery_word(choice).lower()
+
+
+# game_prompt()
+# if "yes":
+#     main()
+# else:
+#     print("Thanks for playing!")
+
+        
+
+main()

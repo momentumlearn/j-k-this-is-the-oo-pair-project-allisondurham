@@ -63,12 +63,12 @@ def split(word):
 
 
 
+intro()
 
 choice = difficulty_choice()
 
 mystery_word = pick_mystery_word(choice).lower()
 
-intro()
 
  
 print(mystery_word)
