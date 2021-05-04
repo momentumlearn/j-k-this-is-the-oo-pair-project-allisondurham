@@ -52,22 +52,27 @@ def pick_mystery_word(difficulty):
     return random.choice(word_bank)
 
 
-def pick_a_word(word):
+def length_of_word(word):
     print(len(word))
     
     
 def split(word):
     return list(word)
 
+
+
+
+
+
 choice = difficulty_choice()
 
-mystery_word = pick_mystery_word(choice)
-
+mystery_word = pick_mystery_word(choice).lower()
 
 intro()
+
  
 print(mystery_word)
-pick_a_word(mystery_word)
+length_of_word(mystery_word)
 print(split(mystery_word))
 
 
@@ -85,19 +90,3 @@ print(split(mystery_word))
 
 
 
-
-# print(easy_words)
-# print(medium_words)
-# print(easy_words)   
-
-
-    
-
-# def split(word):
-#     return list(word)
-
-
-# mystery_word = pick_mystery_word()
-# print(mystery_word)
-
-# print(split(mystery_word))
