@@ -134,10 +134,11 @@ def play_the_game():
     while True:
         print("")
         yes_no = input("Are you ready to play WHEEL OF FORTUNE?    YES or NO?       ")
-        affirm = yes_no.lower()
-        if affirm == "yes":
+        # affirm = yes_no.lower()
+        affirm = yes_no[0].lower()
+        if affirm == "y":
             main()
-        elif affirm == "no":    
+        elif affirm == "n":    
             print("Goodbye, have a goood day!")
             break
         else: 
@@ -145,3 +146,4 @@ def play_the_game():
 
 
 play_the_game()
+
