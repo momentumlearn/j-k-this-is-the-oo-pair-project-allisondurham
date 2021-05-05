@@ -51,9 +51,9 @@ def game_mode_pick(difficulty_choice):
     else: 
         input("Choose a difficutly:  ENTER  1 for Easy, 2 for Normal, or 3 for Challenging:  ")
 
-def pick_a_word():
-    word = [difficulty_choice]
-    print(len(word))
+# def length_of_word():
+#     word = [mystery_word]
+#     print(len(word))
     
 
 def pick_mystery_word(difficulty):
@@ -64,16 +64,18 @@ def pick_mystery_word(difficulty):
 ###########################################################################################
 
 def play(word):
-    word_completion = "_" * len(word)
+    word_completion = "_ " * len(word)
     guessed = False
     guessed_letters = []
     tries = 8
-    print("Let's play Wheel of Fortune!")
-    print(f' You have {tries} tries left')
+    print("")
+    print("Let's play WHEEL OF FORTUNE!")
+    print(f'The mystery word has {len(word)} letters.')
+    print(f'You have {tries} guesses.')
     print(word_completion)
     print("\n")
     while not guessed and tries > 0:
-        guess = input("You guessed: ").lower()
+        guess = input("Your guess:    ").upper()
 
 
         if len(guess) == 1 and guess.isalpha():
@@ -89,7 +91,7 @@ def play(word):
                word_as_list = list(word_completion)
                indices = [i for i, letter in enumerate(word) if letter == guess]
                for index in indices:
-                   word_as_list[index] = guess
+                   word_as_list[index * 2] = guess
                word_completion = "".join(word_as_list)
                if "_" not in word_completion:
                    guessed = True
@@ -109,17 +111,17 @@ def play(word):
             print("Please guess a single letter")
 
 
-        print(f' You have {tries} tries left')
+        print(f' You have {tries} guesses remaining.')
         print(word_completion)
         print("\n")
 
     if guessed:
-        print("You are the winner of this episode of Wheel of Fortune!")
+        print("CONGRATS!!!  You are the WINNER of this episode of WHEEL OF FORTUNE!!!")
         print("")
         pass
 
     else:
-        print("Sorry, you ran out of tries. The word was " + word + ". Better luck next time.")
+        print("Sorry, you ran out of guesses. The word was " + word + ". Better luck next time.")
         print()
         pass
 
@@ -128,16 +130,16 @@ def play(word):
 def main():
     intro()
     choice = difficulty_choice()
-    mystery_word = pick_mystery_word(choice).lower()
+    mystery_word = pick_mystery_word(choice).upper()
     word = mystery_word
-    # print(mystery_word)
-    play(mystery_word)
+    print(mystery_word)
+    play(word)
     
 
 def play_the_game():
     while True:
         print("")
-        yes_no = input("Are you ready to play WHEEL OF FORTUNE?    yes or no?       ")
+        yes_no = input("Are you ready to play WHEEL OF FORTUNE?    YES or NO?       ")
         affirm = yes_no.lower()
         if affirm == "yes":
             main()
